@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+// Components
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
-import { FoodListComponent } from './food-list/food-list.component';
+import { FoodAddComponent } from './food-add/food-add.component';
 
 
 
@@ -11,7 +13,7 @@ import { FoodListComponent } from './food-list/food-list.component';
   declarations: [
     InputComponent,
     OutputComponent,
-    FoodListComponent,
+    FoodAddComponent,
   ],
   imports: [
     CommonModule

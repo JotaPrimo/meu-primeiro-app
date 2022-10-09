@@ -9,7 +9,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DiretivasEstruturaisComponent } from './diretivas-estruturais/diretivas-estruturais.component';
 import { InputComponent } from './shared/input/input.component';
 import { OutputComponent } from "./shared/output/output.component";
-import { FoodListComponent } from "./shared";
+import { FoodAddComponent, FoodListComponent} from "./shared";
+
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FoodListComponent } from "./shared";
     DiretivasEstruturaisComponent,
     InputComponent,
     OutputComponent,
+    FoodAddComponent,
     FoodListComponent
   ],
   imports: [
