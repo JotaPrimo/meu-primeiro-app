@@ -1,0 +1,36 @@
+<h2>Interpolation</h2>
+<ol>
+  <li>{{ primogenito }}</li>
+  <li>{{ cacula }}</li>
+</ol>
+
+<p> {{ primogenito }} tem mais de um ano ? </p>
+<p> {{ idade > 1 }} </p>
+
+
+<br>
+<br>
+
+
+<hr>
+<h2>Properting Binding</h2>
+<button [disabled]="checkedDisabled">Button</button>
+
+<hr>
+<h2>Event Binding</h2>
+
+<br>
+<br>
+
+<button (click)="alertaInfo($event)">Evento</button>
+<button (click)="temCerteza()">Tem Certeza ?</button>
+
+<hr>
+<h2>Two-way Binding</h2>
+
+<br>
+<br>
+
+<input type="text" [(ngModel)]="primogenito"> {{ primogenito }}
+<input type="text" [(ngModel)]="cacula"> {{ cacula }}
+
