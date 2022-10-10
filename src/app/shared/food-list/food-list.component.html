@@ -1,6 +1,9 @@
  <br>
  <br>
 
- <li *ngFor="let item of foodList">
-  [{{ item.id }}] - {{ item.nome }}
-</li>
+<ul>
+  <label for="">Minhas lista de comidas</label>
+  <li *ngFor="let item of foodList">
+    {{ item }}
+   </li>
+</ul>

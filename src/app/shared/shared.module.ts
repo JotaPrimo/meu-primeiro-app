@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 // Components
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
+import { FoodListComponent } from "./food-list";
 
 
 
@@ -22,6 +23,7 @@ import { OutputComponent } from './output/output.component';
   exports: [
     InputComponent,
     OutputComponent,
+    FoodListComponent
   ]
 })
 export class SharedModule { }

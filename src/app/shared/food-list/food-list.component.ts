@@ -11,30 +11,12 @@ import { FoodListService } from "../food-list.service";
 })
 export class FoodListComponent implements OnInit {
 
-  // injeção de dependcia
-  constructor(private foodListService: FoodListService) { }
+  public foodList: Array<string> = [];
 
-  public foodList: Array<FoodList> = [];
+  constructor(private foodListService: FoodListService){}
 
   ngOnInit(): void {
-    // inciando o component preechendo a lista
-    this.foodListService.foodList().subscribe(
-      {
-        next: (res) => this.foodList = res,
-        error: (err) => console.log(err)
-      }
-    );
-
-    this.foodListService.emitEvent.subscribe(
-      {
-        next: (res: any) => {
-          alert(`Você add => ${res.nome}`);
-          return this.foodList.push(res)
-        },
-        error: (err: any) => alert(err)
-      }
-    );
-    // subscrice conecta este componete ao service, me avisando do seu comportamento
+    this.foodList = this.foodListService.listFood();
   }
 
 
