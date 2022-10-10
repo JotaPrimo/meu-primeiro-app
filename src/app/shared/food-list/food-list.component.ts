@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodList } from 'src/app/module/food-list';
 
-// services
-import { FoodListService } from "../food-list.service";
+// Services
+import { FoodListService } from '../food-list.service';
 
 @Component({
   selector: 'app-food-list',
@@ -13,12 +12,12 @@ export class FoodListComponent implements OnInit {
 
   public foodList: Array<string> = [];
 
-  constructor(private foodListService: FoodListService){}
+  constructor(private foodListService: FoodListService) { }
 
   ngOnInit(): void {
-    this.foodList = this.foodListService.listFood();
+    this.foodList = this.foodListService.foodList();
   }
 
-
+ 
 
 }

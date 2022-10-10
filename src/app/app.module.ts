@@ -8,10 +8,9 @@ import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DiretivasEstruturaisComponent } from './diretivas-estruturais/diretivas-estruturais.component';
-import { InputComponent } from './shared/input/input.component';
-import { OutputComponent } from "./shared/output/output.component";
-import { FoodAddComponent, FoodListComponent} from "./shared";
 import { FormsComponent } from './forms/forms.component';
+
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -21,17 +20,14 @@ import { FormsComponent } from './forms/forms.component';
     TitleComponent,
     DataBindingComponent,
     DiretivasEstruturaisComponent,
-    InputComponent,
-    OutputComponent,
-    FoodAddComponent,
-    FoodListComponent,
-    FormsComponent
+    FormsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

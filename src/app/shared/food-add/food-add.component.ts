@@ -15,6 +15,8 @@ export class FoodAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  public listAddItem(value: string) {
+    return this.foodListService.foodListAdd(value);
+  }
 
 }

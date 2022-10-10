@@ -1,28 +1,21 @@
-import { HttpClient } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { FoodList } from '../module/food-list';
-
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodListService {
 
-  public emitEvent = new EventEmitter();
+  private list: Array<string> = ["X-bacon", "Ovo", "Feijão"];
+  
+  constructor() { }
 
-  private url: string = "http://localhost:3000/"; //
-
-  // não pode ser acessado diretamente
-  private list: Array<string> = ["X-Bacon", "Feijão", "Ovo"];
-
-  constructor(private http: HttpClient) { }
-
-  /**
-   * listFood
-   */
-  public listFood() {
+  public foodList() {
     return this.list;
   }
+
+  public foodListAdd(value: string) {
+    return this.list.push(value);
+  }
+
 
 }
