@@ -1,7 +1,7 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
   <label for="nome">Nome:
     <input type="text" name="nome" id="nome" #nome="ngModel" [ngModel]="nome.value" required>
-    <span *ngIf="nome.invalid && (nome.dirty && nome.touched)">
+    <span *ngIf="nome.valid && (nome.dirty && nome.touched)">
       Inválido
     </span>
   </label>
@@ -72,6 +72,8 @@
 
   <br>
   <br>
+
+  <button [disabled]="form.invalid" type="submit">Enviar Dados</button>
 
 
 </form>
