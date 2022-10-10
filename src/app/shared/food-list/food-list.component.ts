@@ -24,14 +24,39 @@ export class FoodListComponent implements OnInit {
     // toda vez que o o service de food list emitir um evnto
     // o foodList componet será alertado
     this.foodListService.emitEvent.subscribe(
-      { next: (res: any) => {
+      {
+        next: (res: any) => {
         alert(`Olha vc add o item => ${res.nome}`);
         return this.foodList.push(res)
       }
     }
     );
+
+
   }
 
+  public foodListEdit(value: string, id: number){
+    this.foodListService.foodListEdit(value, id).subscribe(
+      {
+        next: (res: any) => {
+          return console.log(res);
+      },
+      error: (error) => error}
+    )
+  }
 
+  public foodListDelete(id: number){
+    return this.foodListService.foodListDelete(id).subscribe(
+      {
+        next: (res : any) => {
+          this.foodList = this.foodList.filter(
+            item => {
+              return id !== item.id
+            }
+          )
+        },
+        error: (err : any) => err
+      });
+  }
 
 }
