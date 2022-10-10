@@ -11,7 +11,7 @@ import { FoodListService } from '../food-list.service';
 })
 export class FoodListComponent implements OnInit {
 
-  public foodList: FoodList | any;
+  public foodList: Array<FoodList> = [];
 
   constructor(private foodListService: FoodListService) { }
 
@@ -24,7 +24,11 @@ export class FoodListComponent implements OnInit {
     // toda vez que o o service de food list emitir um evnto
     // o foodList componet será alertado
     this.foodListService.emitEvent.subscribe(
-      { next: (res: any) => alert(`Olha vc add o item => ${res}`) }
+      { next: (res: any) => {
+        alert(`Olha vc add o item => ${res.nome}`);
+        return this.foodList.push(res)
+      }
+    }
     );
   }
 
