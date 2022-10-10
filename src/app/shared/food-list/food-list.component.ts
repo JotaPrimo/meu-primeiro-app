@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodList } from 'src/app/module/food-list';
 
 // Services
 import { FoodListService } from '../food-list.service';
@@ -10,12 +11,15 @@ import { FoodListService } from '../food-list.service';
 })
 export class FoodListComponent implements OnInit {
 
-  public foodList: Array<string> = [];
+  public foodList: FoodList | any;
 
   constructor(private foodListService: FoodListService) { }
 
   ngOnInit(): void {
-    this.foodList = this.foodListService.foodList();
+    this.foodListService.foodList().subscribe({
+      next: (res) => this.foodList = res,
+      error: (error) => error
+    });
 
     // toda vez que o o service de food list emitir um evnto
     // o foodList componet será alertado
