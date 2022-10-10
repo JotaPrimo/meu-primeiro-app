@@ -5,7 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 // Components
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
-import { FoodAddComponent } from './food-add/food-add.component';
+
 
 
 
@@ -14,7 +14,6 @@ import { FoodAddComponent } from './food-add/food-add.component';
   declarations: [
     InputComponent,
     OutputComponent,
-    FoodAddComponent,
   ],
   imports: [
     CommonModule,

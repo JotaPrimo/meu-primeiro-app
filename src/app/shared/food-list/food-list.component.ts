@@ -14,7 +14,7 @@ export class FoodListComponent implements OnInit {
   // injeção de dependcia
   constructor(private foodListService: FoodListService) { }
 
-  public foodList: FoodList | any;
+  public foodList: Array<FoodList> = [];
 
   ngOnInit(): void {
     // inciando o component preechendo a lista
@@ -27,7 +27,10 @@ export class FoodListComponent implements OnInit {
 
     this.foodListService.emitEvent.subscribe(
       {
-        next: (res: any) => alert(`Você add => ${res}`),
+        next: (res: any) => {
+          alert(`Você add => ${res.nome}`);
+          return this.foodList.push(res)
+        },
         error: (err: any) => alert(err)
       }
     );

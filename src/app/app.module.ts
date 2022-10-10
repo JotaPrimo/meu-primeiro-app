@@ -11,6 +11,7 @@ import { DiretivasEstruturaisComponent } from './diretivas-estruturais/diretivas
 import { InputComponent } from './shared/input/input.component';
 import { OutputComponent } from "./shared/output/output.component";
 import { FoodAddComponent, FoodListComponent} from "./shared";
+import { FormsComponent } from './forms/forms.component';
 
 
 
@@ -23,7 +24,8 @@ import { FoodAddComponent, FoodListComponent} from "./shared";
     InputComponent,
     OutputComponent,
     FoodAddComponent,
-    FoodListComponent
+    FoodListComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
